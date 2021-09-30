@@ -15,7 +15,7 @@ export class CadastrarComponent implements OnInit {
   confirmarSenha: string
   tipoUsuario: string
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService, private router: Router) {
   }
 
   ngOnInit() {
@@ -40,6 +40,7 @@ export class CadastrarComponent implements OnInit {
       this.auth.cadastrar(this.usuario).subscribe((resp: Usuario) => {
         this.usuario = resp
         alert('Usuario criado com sucesso')
+        this.router.navigate(['/entrar'])
       })
     }
   }
