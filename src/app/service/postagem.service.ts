@@ -32,7 +32,7 @@ export class PostagemService {
   }
 
   deletePostagem(id: number){
-    return this.http.delete('https://blogpessoalfernandomarques.herokuapp.com/postagens', this.token)
+    return this.http.delete(`https://blogpessoalfernandomarques.herokuapp.com/postagens/${id}`, this.token)
   }
 
 }
